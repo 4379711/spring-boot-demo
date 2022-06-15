@@ -1,0 +1,47 @@
+server:
+  port: 43797
+
+redisson:
+  host: 192.168.1.29
+  port: 6379
+  password: 'maike@2020'
+  dbIndex: 10
+  connectPoolSize: 15
+  idleSize: 5
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.1.30:3306/www?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      username: root
+      password: 'maike@2020'
+
+# mybatis配置
+mybatis-plus:
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*.xml
+  global-config:
+    banner: false
+    #刷新mapper
+    refresh: true
+    db-config:
+      #驼峰下划线转换
+      column-underline: true
+      #数据库大写下划线转换
+      #capital-mode: true
+      #逻辑删除配置
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+
+# 配置swagger
+swagger:
+  enabled: true
+  base-package: com.example
+  title: 接口文档
+  version: 1.0
