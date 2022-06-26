@@ -26,7 +26,8 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
                 .excludePathPatterns("/swagger**/**")
                 .excludePathPatterns("/webjars/**")
                 .excludePathPatterns("/v3/**")
-                .excludePathPatterns("/doc.html");
+                .excludePathPatterns("/doc.html")
+                .excludePathPatterns("/test/**");
     }
 
     /**

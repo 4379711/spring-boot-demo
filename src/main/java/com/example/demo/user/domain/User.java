@@ -3,12 +3,14 @@ package com.example.demo.user.domain;
 import io.swagger.annotations.ApiModelProperty;
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * @author YaLong
  */
 @TableName(value = "user")
 @Data
+@Accessors(chain = true)
 public class User {
     /**
      * 主键ID
